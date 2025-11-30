@@ -57,7 +57,7 @@
       <button id="nav-tasks">📝 Tasks</button>
     </nav>
 
-    <!-- ✅ NEW ENHANCED DASHBOARD -->
+    <!-- DASHBOARD -->
     <section id="dashboard" class="section">
       <h2>📊 Dashboard Overview</h2>
       <div class="columns">
@@ -74,11 +74,14 @@
             </div>
             <div>
               <h4>⚡ In Progress (<span id="progress-count">0</span>)</h4>
-              <div id="tasks-progress"></div>
+              <div id="tasks-inprogress"></div>
             </div>
             <div>
               <h4>✅ Completed (<span id="done-count">0</span>)</h4>
-              <div id="tasks-done"></div>
+
+              <!-- FIXED ID -->
+              <div id="tasks-completed"></div>
+
             </div>
           </div>
         </div>
@@ -91,12 +94,12 @@
       <form id="create-team-form">
         <h3>➕ Create New Team</h3>
         <label>Team Name:</label>
-        <input type="text" id="team-name" placeholder="e.g. Marketing Team" required>
+        <input type="text" id="team-name" required>
         
         <div>
           <label>Team Members (add one by one):</label>
           <div class="members-input">
-            <input type="text" id="member-name" placeholder="John Doe">
+            <input type="text" id="member-name">
             <button type="button" class="add-member-btn" id="add-member-btn">➕ Add</button>
           </div>
           <div id="team-members-preview" class="team-members" style="min-height: 40px;">No members added yet</div>
@@ -104,6 +107,7 @@
         
         <button type="submit">🚀 Create Team</button>
       </form>
+
       <h3>📋 All Teams</h3>
       <div id="teams-list" class="empty">No teams created yet</div>
     </section>
@@ -125,20 +129,24 @@
             <input type="date" id="task-deadline" required>
           </div>
         </div>
+
         <label>Title:</label>
-        <input type="text" id="task-title" placeholder="Task title" required>
+        <input type="text" id="task-title" required>
+
         <label>Description:</label>
-        <textarea id="task-desc" placeholder="Task description" required></textarea>
+        <textarea id="task-desc" required></textarea>
+
         <label>Assign to:</label>
         <select id="task-assignee" required>
           <option value="">Select team member</option>
         </select>
+
         <button type="submit">📋 Create Task</button>
       </form>
+
       <h3>📊 Tasks by Team</h3>
       <div id="tasks-by-team" class="empty">Create a team first</div>
     </section>
   </main>
-
 </body>
 </html>

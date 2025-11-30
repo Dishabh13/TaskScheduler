@@ -71,9 +71,9 @@ document.getElementById("create-team-form").addEventListener("submit", e => {
   e.preventDefault();
 
   const name = document.getElementById("team-name").value.trim();
-  if (!name) return alert("⚠️ Enter name");
-  if (currentTeamMembers.length === 0) return alert("⚠️ Add members");
-  if (teams.some(t => t.name === name)) return alert("⚠️ Team exists");
+  if (!name) return alert(" Enter name");
+  if (currentTeamMembers.length === 0) return alert(" Add members");
+  if (teams.some(t => t.name === name)) return alert(" Team exists");
 
   const newTeam = {
     id: Date.now(),
@@ -94,7 +94,7 @@ document.getElementById("create-team-form").addEventListener("submit", e => {
   renderTaskForm();
   renderTasksByTeam();
 
-  alert(`✅ Team "${name}" created!`);
+  alert(` Team "${name}" created!`);
 });
 
 /* -------------------------
@@ -196,7 +196,7 @@ document.getElementById("create-task-form").addEventListener("submit", e => {
   renderTasksByTeam();
   renderTaskForm();
 
-  alert(`📌 Task "${title}" created!`);
+  alert(` Task "${title}" created!`);
   e.target.reset();
 });
 
@@ -226,7 +226,7 @@ function renderDashboard() {
               <div>${count} tasks</div>
 
               <button onclick="deleteTeam(${t.id})"
-                      style="background:#ff6b6b;margin-top:10px;padding:6px 12px;font-size:12px;border-radius:6px;">
+                      style="background:red;margin-top:10px;padding:6px 12px;font-size:12px;border-radius:6px;">
                 🗑 Delete
               </button>
             </div>
@@ -263,9 +263,9 @@ function renderDashboard() {
             </div>
             <div class="task-status">
               <select onchange="updateTaskStatus(${t.id}, this.value)">
-                <option value="todo" ${t.status === "todo" ? "selected" : ""}>📌 To Do</option>
-                <option value="inprogress" ${t.status === "inprogress" ? "selected" : ""}>⚡ In Progress</option>
-                <option value="completed" ${t.status === "completed" ? "selected" : ""}>✅ Completed</option>
+                <option value="todo" ${t.status === "todo" ? "selected" : ""}>☐ To Do</option>
+                <option value="inprogress" ${t.status === "inprogress" ? "selected" : ""}>◐ In Progress</option>
+                <option value="completed" ${t.status === "completed" ? "selected" : ""}>✔ Completed</option>
               </select>
             </div>
           </div>`
@@ -316,9 +316,8 @@ function renderTasksByTeam() {
     })
     .join("");
 }
-
 /* -------------------------
-   INIT
+  INIT
 -------------------------- */
 renderDashboard();
 renderTeams();

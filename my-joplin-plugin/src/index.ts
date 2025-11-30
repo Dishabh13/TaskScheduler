@@ -19,6 +19,7 @@ joplin.plugins.register({
         // Set HTML into the panel
         await joplin.views.panels.setHtml(panel, html);
 		await joplin.views.panels.addScript(panel, './ui/script.js');
+// await joplin.views.panels.addScript(panel, path.join(pluginDir, 'ui/script.js'));
 
         console.info("My HTML plugin loaded!");
     },
